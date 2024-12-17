@@ -5,7 +5,7 @@ document.getElementById("jsonToXml").addEventListener("click", function () {
     const xml = jsonToXml(json);
     document.getElementById("outputData").value = formatXml(xml);
   } catch (error) {
-    alert("Geçerli bir JSON formatı girin.");
+    alert("Enter valid JSON format.");
   }
 });
 
@@ -15,12 +15,12 @@ document.getElementById("xmlToJson").addEventListener("click", function () {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(input, "text/xml");
     if (xmlDoc.getElementsByTagName("parsererror").length) {
-      throw new Error("Geçerli bir XML formatı girin.");
+      throw new Error("Enter valid XML format.");
     }
     const json = xmlToJson(xmlDoc.documentElement);
     document.getElementById("outputData").value = JSON.stringify(json, null, 2);
   } catch (error) {
-    alert("Geçerli bir XML formatı girin.");
+    alert("Enter valid XML format.");
   }
 });
 
